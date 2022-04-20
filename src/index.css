@@ -1,3 +1,9 @@
+:root {
+  --text-color: #232323;
+  --link-color: #009ADD;
+  --bg-color: #e5e5e5;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,18 +12,20 @@
 
 body {
   font-family: 'Century Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 a {
-  color: #009ADD;
   display: inline-block;
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--link-color);
   text-decoration: underline;
 }

@@ -9,23 +9,25 @@ const Header = () => {
         <img src={logo} alt="flex logo.png" />
         <span>| Digital Catalog</span>
       </a>
-      <nav className="header-navigation">
-        <ul>
-          <li>
-            <a href="/#">Link 1</a>
-          </li>
-          <li>
-            <a href="/#">Link 2</a>
-          </li>
-          <li>
-            <a href="/#">Link 3</a>
-          </li>
-          <li>
-            <a href="/#">Link 4</a>
-          </li>
-        </ul>
-      </nav>
-      <button className="header-upload-button">Upload a Model</button>
+      <div>
+        <nav className="header-navigation">
+          <ul>
+            <li>
+              <a href="/#">Link 1</a>
+            </li>
+            <li>
+              <a href="/#">Link 2</a>
+            </li>
+            <li>
+              <a href="/#">Link 3</a>
+            </li>
+            <li>
+              <a href="/#">Link 4</a>
+            </li>
+          </ul>
+        </nav>
+        <button className="header-upload-button">Upload a Model</button>
+      </div>
     </header>
   );
 };
