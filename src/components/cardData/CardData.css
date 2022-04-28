@@ -1,0 +1,25 @@
+.data-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.avatar-image {
+  height: 30px;
+  width: 30px;
+  margin-right: 6px;
+  background-color: #A5A5A5;
+}
+
+.model-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 60%;
+  height: 1.2em;
+  white-space: nowrap;
+}
+
+.model-price {
+  margin-left: 6px;
+}
