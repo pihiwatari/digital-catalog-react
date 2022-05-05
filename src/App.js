@@ -1,18 +1,15 @@
-import Header from "./components/header/Header";
-import SearchBar from "./components/searchBar/SearchBar";
-import ModelCard from "./components/modelCard/ModelCard";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Gallery from "./components/Gallery";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <SearchBar />
-      <main className="gallery-grid">
-        <ModelCard />
-        <ModelCard />
-        <ModelCard />
-      </main>
+      <Routes>
+        <Route path="/" element={<Gallery />} />
+      </Routes>
       <footer>FOOTER</footer>
     </div>
   );
