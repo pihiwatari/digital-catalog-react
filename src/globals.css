@@ -1,0 +1,9 @@
+:root {
+  --text-color: #232323;
+  --link-color: #009ADD;
+  --bg-color: #e5e5e5;
+  --footer-bg-color: #616161;
+  --footer-text-color: #fff;
+  --img-bg: #A5A5A5;
+  --shadow: 0px 2px 8px rgba(0, 0, 0, 0.25)
+}

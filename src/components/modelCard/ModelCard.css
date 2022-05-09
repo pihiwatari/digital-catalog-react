@@ -1,7 +1,8 @@
+@import "../../globals.css";
+
 .card {
   display: flex;
   flex-direction: column;
-  min-width: 300px;
   max-width: 450px;
   height: 300px;
   margin-bottom: 12px;
@@ -12,6 +13,6 @@
 
 .image-container {
   min-height: 240px;
-  background-color: #A5A5A5;
+  background-color: var(--img-bg);
   border-radius: 5px 5px 0 0;
 }

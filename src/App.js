@@ -1,6 +1,9 @@
 import Header from "./components/header/Header";
 import SearchBar from "./components/searchBar/SearchBar";
-import ModelCard from "./components/modelCard/ModelCard";
+import Gallery from "./components/gallery/Gallery";
+import Footer from "./components/footer/Footer";
+import ModelDetails from "./components/modelDetails/ModelDetails";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -8,12 +11,11 @@ function App() {
     <div className="App">
       <Header />
       <SearchBar />
-      <main className="gallery-grid">
-        <ModelCard />
-        <ModelCard />
-        <ModelCard />
-      </main>
-      <footer>FOOTER</footer>
+      <Routes>
+        <Route path="/" element={<Gallery />} />
+        <Route path="/card" element={<ModelDetails />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

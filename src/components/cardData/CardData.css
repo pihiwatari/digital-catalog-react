@@ -1,7 +1,7 @@
 .data-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: 100%;
 }
 
@@ -13,10 +13,10 @@
 }
 
 .model-description {
+  width: 50%;
+  height: 1.2em;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 60%;
-  height: 1.2em;
   white-space: nowrap;
 }
 

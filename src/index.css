@@ -1,8 +1,4 @@
-:root {
-  --text-color: #232323;
-  --link-color: #009ADD;
-  --bg-color: #e5e5e5;
-}
+@import "./globals.css";
 
 * {
   margin: 0;
@@ -27,6 +23,7 @@ body {
 a {
   display: inline-block;
   text-decoration: none;
+  color: var(--text-color)
 }
 
 a:hover {

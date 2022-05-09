@@ -1,0 +1,56 @@
+@import "../../globals.css";
+
+.model-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.model__display {
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+.display__render {
+  height: 70vh;
+  background-color: var(--img-bg);
+}
+
+.display__render img {
+  height: 100%;
+}
+
+.model__data-container {
+  padding: 12px;
+  background-color: #fff;
+}
+
+.data__title {
+  font-size: 1.25rem;
+}
+
+.data__specs-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-content: center;
+  gap: 1px;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.specs-list__item {
+  list-style: none;
+  outline: 1px solid var(--bg-color);
+  padding: 4px;
+}
+
+.item__key {
+  font-weight: bold;
+  color: var(--footer-bg-color);
+}
+
+.item__value {
+  margin-top: 8px;
+}

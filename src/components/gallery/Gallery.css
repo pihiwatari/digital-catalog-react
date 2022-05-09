@@ -1,0 +1,6 @@
+.gallery-grid {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  padding: 16px 5%;
+}
