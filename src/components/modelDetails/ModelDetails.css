@@ -1,10 +1,14 @@
 @import "../../globals.css";
 
 .model-container {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
   width: 100%;
+  margin-bottom: 12px;
   padding: 0 5%;
 }
 
@@ -41,16 +45,69 @@
 }
 
 .specs-list__item {
-  list-style: none;
   outline: 1px solid var(--bg-color);
   padding: 4px;
 }
 
 .item__key {
+  font-size: .9rem;
   font-weight: bold;
-  color: var(--footer-bg-color);
+  color: var(--secondary-text-color);
 }
 
 .item__value {
   margin-top: 8px;
+}
+
+/* Second container */
+
+.model__properties-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+.properties__pricing {
+  padding: 12px;
+  background-color: #fff;
+}
+
+.properties__pricing p {
+  color: var(--secondary-text-color)
+}
+
+.properties__pricing h3 {
+  margin: 12px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent)
+}
+
+.properties__pricing button {
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--link-color);
+}
+
+.properties__data-list-container {
+  padding: 12px;
+}
+
+.data-list {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  text-align: center;
+}
+
+.data-list__item h4{
+  font-size: .9rem;
+  color: var(--secondary-text-color);
 }

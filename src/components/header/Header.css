@@ -29,5 +29,5 @@
   border: none;
   border-radius: 6px;
   color: #fff;
-  background-color: #ED8B19;
+  background-color: var(--accent);
 }
