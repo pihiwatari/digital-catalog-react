@@ -3,7 +3,7 @@
 footer {
   display: flex;
   justify-content: center;
-  padding: 5%;
+  padding: 16px 5%;
   text-align: left;
   background-color: var(--footer-bg-color);
   color: var(--footer-text-color);

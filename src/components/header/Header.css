@@ -9,6 +9,11 @@
   box-shadow: var(--shadow);
 }
 
+.header-logo-container {
+  display: flex;
+  align-items: center;
+}
+
 .header-logo {
   display: flex;
   align-items: center;
@@ -21,6 +26,13 @@
 
 .header-logo span {
   display: none
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .header button {
