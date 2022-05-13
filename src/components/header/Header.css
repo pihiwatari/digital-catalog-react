@@ -25,7 +25,7 @@
 }
 
 .header-logo span {
-  display: none
+  font-size: 1.25rem
 }
 
 .navigation-container {
@@ -36,10 +36,12 @@
 }
 
 .header button {
-  width: 80px;
+  min-width: 80px;
   height: 40px;
+  padding: 8px 12px;
   border: none;
   border-radius: 6px;
+  font-weight: bold;
   color: #fff;
   background-color: var(--accent);
 }
