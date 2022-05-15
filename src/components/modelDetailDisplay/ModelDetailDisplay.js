@@ -35,8 +35,10 @@ export default function ModelDetailDisplay() {
         <img src="" alt="" />
       </figure>
       <div className="model__data-container">
-        <h2 className="data__title">3D model title</h2>
-        {width >= 768 ? <span>| Uploaded in March 26</span> : ""}
+        <div className="data__title-container">
+          <h2>3D model title</h2>
+          {showText ? <span>| Uploaded in March 26</span> : ""}
+        </div>
         <ul className="data__specs-list">
           {modelSpecs.map((item, key) => {
             return (

@@ -19,7 +19,12 @@
   background-color: #fff;
 }
 
-.data__title {
+.data__title-container {
+  display: flex;
+  align-items: center;
+}
+
+.data__title-container h2 {
   font-size: 1.25rem;
 }
 
@@ -45,4 +50,17 @@
 
 .item__value {
   margin-top: 8px;
+}
+
+@media screen and (min-width: 1024px) {
+  .data__specs-list {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 600px;
+    text-align: left;
+  }
+
+    .specs-list__item {
+      outline: none;
+      padding: 0;
+    }
 }
