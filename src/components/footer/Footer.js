@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import LinkList from "../linkList/LinkList";
 import logo from "../../images/flex-logo.png";
 import "./Footer.css";
 
@@ -27,39 +27,15 @@ export default function Footer() {
   const links = ["Home", "Ecommerce", "Enterprise", "About-Us"];
   return (
     <footer>
-      {showLogo ? <img src={logo} alt="Flex logo" /> : ""}
-      <div className="footer-links-container">
-        <ul>
-          <h4>Links title</h4>
-          {links.map((link, key) => {
-            return (
-              <li key={key}>
-                <Link to={link.toLowerCase()}>{link}</Link>
-              </li>
-            );
-          })}
-        </ul>
-        <ul>
-          <h4>Links title</h4>
-          {links.map((link, key) => {
-            return (
-              <li key={key}>
-                <Link to={link.toLowerCase()}>{link}</Link>
-              </li>
-            );
-          })}
-        </ul>
-        <ul>
-          <h4>Links title</h4>
-          {links.map((link, key) => {
-            return (
-              <li key={key}>
-                <Link to={link.toLowerCase()}>{link}</Link>
-              </li>
-            );
-          })}
-        </ul>
+      <div className="footer-container">
+        {showLogo ? <img src={logo} alt="Flex logo" /> : ""}
+        <div className="footer-links-container">
+          <LinkList links={links} title={"Links list"} />
+          <LinkList links={links} title={"Links list"} />
+          <LinkList links={links} title={"Links list"} />
+        </div>
       </div>
+      <small>Developed by Elias Rayas</small>
     </footer>
   );
 }

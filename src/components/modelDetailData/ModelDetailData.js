@@ -1,4 +1,5 @@
 import React from "react";
+import data from "../../utils/mockupData";
 import "./ModelDetailData.css";
 
 export default function ModelDetailData() {
@@ -11,18 +12,12 @@ export default function ModelDetailData() {
       </div>
       <div className="properties__data-list-container">
         <ul className="data-list">
-          <li className="data-list__item">
-            <h4>Category</h4>
-            <p>End-use parts</p>
-          </li>
-          <li className="data-list__item">
-            <h4>Category</h4>
-            <p>End-use parts</p>
-          </li>
-          <li className="data-list__item">
-            <h4>Category</h4>
-            <p>End-use parts</p>
-          </li>
+          {data.map((item, key) => (
+            <li className="data-list__item" key={key}>
+              <h4>{item.title}</h4>
+              <p>{item.value}</p>
+            </li>
+          ))}
         </ul>
       </div>
     </aside>

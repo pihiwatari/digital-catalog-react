@@ -10,9 +10,7 @@
   background-color: var(--img-bg);
 }
 
-.display__render img {
-  height: 100%;
-}
+
 
 .model__data-container {
   padding: 12px;
@@ -44,12 +42,12 @@
 
 .item__key {
   font-size: .9rem;
-  font-weight: bold;
   color: var(--secondary-text-color);
 }
 
 .item__value {
   margin-top: 8px;
+  color: var(--text-color)
 }
 
 @media screen and (min-width: 1024px) {

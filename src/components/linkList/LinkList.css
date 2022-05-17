@@ -1,0 +1,32 @@
+@import "../../globals.css";
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  color: var(--footer-text-color);
+}
+
+.links-list h4 {
+  margin-bottom: 12px;
+}
+
+.links-list li {
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+.links-list a {
+  color: var(--footer-text-color);
+}
+
+.links-list a:hover {
+  color: var(--link-color);
+}
+
+@media screen and (min-width: 768px) {
+  .links-list {
+      margin-bottom: 0;
+      margin-right: 32px;
+    }
+}

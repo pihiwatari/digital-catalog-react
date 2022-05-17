@@ -1,58 +1,33 @@
 @import "../../globals.css";
 
 footer {
-  display: flex;
-  align-items: center;
   padding: 16px 5%;
-  text-align: left;
   background-color: var(--footer-bg-color);
   color: var(--footer-text-color);
 }
 
-footer .footer-links-container {
+.footer-container {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.footer-container .footer-links-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-footer ul {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-  
-}
-
-footer h4 {
-  margin-bottom: 12px;
-}
-
-footer ul li {
-  list-style: none;
-  margin-bottom: 8px;
-}
-
-footer a {
-  color: var(--footer-text-color);
-}
-
-footer a:hover {
-  color: var(--link-color);
-}
-
-footer img {
+.footer-container img {
   height: 70px;
   margin: auto 16px auto 0;
 }
 
 @media screen and (min-width: 768px) {
 
-  footer .footer-links-container {
+  .footer-container .footer-links-container {
     flex-direction: row;
   }
 
-  footer ul{
-    margin-bottom: 0;
-    margin-right: 32px;
-  }
 }

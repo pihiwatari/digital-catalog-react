@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Render3dModel from "../render3dModel/Render3dModel";
 import "./ModelDetailDisplay.css";
 
 export default function ModelDetailDisplay() {
@@ -32,7 +33,7 @@ export default function ModelDetailDisplay() {
   return (
     <article className="model__display">
       <figure className="display__render">
-        <img src="" alt="" />
+        <Render3dModel />
       </figure>
       <div className="model__data-container">
         <div className="data__title-container">

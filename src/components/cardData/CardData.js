@@ -1,7 +1,7 @@
 import React from "react";
 import "./CardData.css";
 
-const CardData = () => {
+const CardData = (props) => {
   return (
     <div className="data-container">
       <img className="avatar-image" src="" alt="" />
