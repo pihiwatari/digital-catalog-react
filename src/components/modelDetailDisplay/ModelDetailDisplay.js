@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Render3dModel from "../render3dModel/Render3dModel";
 import "./ModelDetailDisplay.css";
 
-export default function ModelDetailDisplay() {
+export default function ModelDetailDisplay({ name, x, y, z, volume }) {
   const [showText, setShowText] = useState(false);
 
   // -----Window width state management-----
@@ -37,7 +37,7 @@ export default function ModelDetailDisplay() {
       </figure>
       <div className="model__data-container">
         <div className="data__title-container">
-          <h2>3D model title</h2>
+          <h2>{name || "Unnamed"}</h2>
           {showText ? <span>| Uploaded in March 26</span> : ""}
         </div>
         <ul className="data__specs-list">

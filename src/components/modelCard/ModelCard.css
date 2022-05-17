@@ -3,7 +3,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  width: 400px;
   height: 300px;
   margin-bottom: 12px;
   border-radius: 5px;
@@ -15,4 +15,8 @@
   min-height: 240px;
   background-color: var(--img-bg);
   border-radius: 5px 5px 0 0;
+}
+
+.model-image {
+  height: 100%;
 }

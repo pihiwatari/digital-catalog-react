@@ -45,3 +45,7 @@
   color: #fff;
   background-color: var(--accent);
 }
+
+.header button:hover {
+  background-color: var(--accent-darker);
+}

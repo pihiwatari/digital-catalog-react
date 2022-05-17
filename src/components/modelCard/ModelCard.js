@@ -3,14 +3,14 @@ import CardData from "../cardData/CardData";
 import { Link } from "react-router-dom";
 import "./ModelCard.css";
 
-const ModelCard = () => {
+const ModelCard = ({ modelImage, avatar, name, price }) => {
   return (
     <Link to="card">
       <article className="card">
         <figure className="image-container">
-          <img className="model-image" src="" alt="" />
+          <img className="model-image" src={modelImage} alt={name} />
         </figure>
-        <CardData />
+        <CardData userImage={avatar} modelName={name} modelPrice={price} />
       </article>
     </Link>
   );

@@ -33,6 +33,10 @@
   background-color: var(--link-color);
 }
 
+.properties__pricing button:hover {
+  background-color: var(--link-color-darker)
+}
+
 .properties__data-list-container {
   padding: 12px;
 }

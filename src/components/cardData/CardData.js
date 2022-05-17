@@ -1,12 +1,13 @@
 import React from "react";
 import "./CardData.css";
+import user from "../../images/usuario.png";
 
-const CardData = (props) => {
+const CardData = ({ userImage, modelName, modelPrice }) => {
   return (
     <div className="data-container">
-      <img className="avatar-image" src="" alt="" />
-      <p className="model-description">3D model display name and more text</p>
-      <strong className="model-price">$00.00</strong>
+      <img className="avatar-image" src={userImage || user} alt="User" />
+      <p className="model-description">{modelName || "Unnamed"}</p>
+      <strong className="model-price">$ {modelPrice || "00.00"}</strong>
     </div>
   );
 };

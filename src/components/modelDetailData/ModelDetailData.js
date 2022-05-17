@@ -2,12 +2,12 @@ import React from "react";
 import data from "../../utils/mockupData";
 import "./ModelDetailData.css";
 
-export default function ModelDetailData() {
+export default function ModelDetailData({ price }) {
   return (
     <aside className="model__properties-container">
       <div className="properties__pricing">
         <p>Estimated printing cost</p>
-        <h3>$ 999.99</h3>
+        <h3>$ {price || "TBD"}</h3>
         <button>Download model</button>
       </div>
       <div className="properties__data-list-container">
