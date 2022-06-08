@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 import fallbackSTL from "./sample3DModel/sus_part_2.stl";
@@ -40,7 +40,7 @@ function Model(props) {
 
 export default function Render3dModel({ photo, url }) {
   return (
-    <Canvas camera={{ position: [0, 0, 100] }}>
+    <Canvas camera={{ position: [-150, 50, 100] }}>
       <Suspense fallback={null}>
         <Stage
           contactShadow

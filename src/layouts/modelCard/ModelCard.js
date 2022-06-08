@@ -3,9 +3,9 @@ import CardData from "../../components/cardData/CardData";
 import { Link } from "react-router-dom";
 import "./ModelCard.css";
 
-const ModelCard = ({ modelImage, avatar, name, price }) => {
+const ModelCard = ({ id, modelImage, avatar, name, price }) => {
   return (
-    <Link to="card">
+    <Link to={"models/" + id}>
       <article className="card">
         <figure className="image-container">
           <img className="model-image" src={modelImage} alt={name} />

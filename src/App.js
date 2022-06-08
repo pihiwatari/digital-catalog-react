@@ -14,7 +14,7 @@ function App() {
       <SearchBar />
       <Routes>
         <Route path="/" element={<Gallery />} />
-        <Route path="/card" element={<ModelDetails />} />
+        <Route path="/models/:id" element={<ModelDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

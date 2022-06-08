@@ -1,8 +1,7 @@
 import React from "react";
-import data from "../../utils/mockupData";
 import "./ModelDetailData.css";
 
-export default function ModelDetailData({ price }) {
+export default function ModelDetailData({ price, specs }) {
   return (
     <aside className="model__properties-container">
       <div className="properties__pricing">
@@ -12,7 +11,7 @@ export default function ModelDetailData({ price }) {
       </div>
       <div className="properties__data-list-container">
         <ul className="data-list">
-          {data.map((item, key) => (
+          {specs.map((item, key) => (
             <li className="data-list__item" key={key}>
               <h4>{item.title}</h4>
               <p>{item.value}</p>
