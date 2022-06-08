@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import LinkList from "../linkList/LinkList";
+import LinkList from "../../components/linkList/LinkList";
 import logo from "../../images/flex-logo.png";
 import "./Footer.css";
 

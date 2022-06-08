@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Render3dModel from "../render3dModel/Render3dModel";
+import Render3dModel from "../../components/render3dModel/Render3dModel";
 import "./ModelDetailDisplay.css";
 
 export default function ModelDetailDisplay({ name, x, y, z, volume }) {

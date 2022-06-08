@@ -1,5 +1,5 @@
 import React from "react";
-import CardData from "../cardData/CardData";
+import CardData from "../../components/cardData/CardData";
 import { Link } from "react-router-dom";
 import "./ModelCard.css";
 

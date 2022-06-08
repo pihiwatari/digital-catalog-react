@@ -1,8 +1,8 @@
-import Header from "./components/header/Header";
+import Header from "./layouts/header/Header";
 import SearchBar from "./components/searchBar/SearchBar";
-import Gallery from "./components/gallery/Gallery";
-import Footer from "./components/footer/Footer";
-import ModelDetails from "./components/modelDetails/ModelDetails";
+import Gallery from "./pages/gallery/Gallery";
+import Footer from "./layouts/footer/Footer";
+import ModelDetails from "./pages/modelDetails/ModelDetails";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import NotFound from "./components/notFound/NotFound";

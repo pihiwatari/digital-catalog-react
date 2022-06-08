@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import MenuIcon from "../menuIcon/MenuIcon";
-import NavMenu from "../navMenu/NavMenu";
+import MenuIcon from "../../components/menuIcon/MenuIcon";
+import NavMenu from "../../components/navMenu/NavMenu";
 import logo from "../../images/flex-logo.png";
 import { FaPlus } from "react-icons/fa";
 import "./Header.css";

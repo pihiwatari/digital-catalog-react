@@ -1,6 +1,6 @@
 import React from "react";
-import ModelDetailData from "../modelDetailData/ModelDetailData";
-import ModelDetailDisplay from "../modelDetailDisplay/ModelDetailDisplay";
+import ModelDetailData from "../../layouts/modelDetailData/ModelDetailData";
+import ModelDetailDisplay from "../../layouts/modelDetailDisplay/ModelDetailDisplay";
 import "./ModelDetails.css";
 
 export default function ModelDetails({ name, price, x, y, z, volume }) {

@@ -1,41 +1,62 @@
-import React, { useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import React, { Suspense, useEffect, useRef, useState } from "react";
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
+import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
+import fallbackSTL from "./sample3DModel/sus_part_2.stl";
+import {
+  GizmoHelper,
+  GizmoViewcube,
+  OrbitControls,
+  Bounds,
+  OrthographicCamera,
+  Stage,
+} from "@react-three/drei";
 
-function CreateMesh(props) {
-  // mesh reference
-  const mesh = useRef();
+function Model(props) {
+  const stl = useLoader(STLLoader, props.url || fallbackSTL);
 
-  // State for hover and active state
-  const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
+  // create ref for mesh
+  const ref = useRef();
 
   // Suscribe to render-loop, rotating mesh every frame
-  useFrame((state, delta) => (mesh.current.rotation.x += 0.01));
+  useFrame((state, delta) => (ref.current.rotation.z += 0.005));
 
-  // Return view (regular three.js element converted to react)
+  const { camera } = useThree();
+
+  useEffect(() => {
+    camera.lookAt([0, 0, 0]);
+  });
+
   return (
-    <mesh
-      {...props}
-      ref={mesh}
-      scale={active ? 1.5 : 1}
-      onClick={(event) => setActive(!active)}
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
-    </mesh>
+    <Bounds fit clip>
+      <OrthographicCamera>
+        <mesh {...props} ref={ref}>
+          <primitive object={stl} attach="geometry" />
+          <meshStandardMaterial color="orange" />
+        </mesh>
+      </OrthographicCamera>
+    </Bounds>
   );
 }
 
-export default function Render3dModel() {
+export default function Render3dModel({ photo, url }) {
   return (
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[-10, -10, -10]} />
-      <CreateMesh position={[-1.2, 0, 0]} />
-      <CreateMesh position={[1.2, 0, 0]} />
+    <Canvas camera={{ position: [0, 0, 100] }}>
+      <Suspense fallback={null}>
+        <Stage
+          contactShadow
+          shadows
+          adjustCamera
+          intensity={0.65}
+          environment="city"
+          preset="rembrandt"
+        >
+          <Model position={[0, 0, 0]} rotation={[-1.5708, 0, 0]} />
+          <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+            <GizmoViewcube />
+          </GizmoHelper>
+        </Stage>
+        <OrbitControls makeDefault />
+      </Suspense>
     </Canvas>
   );
 }

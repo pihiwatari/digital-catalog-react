@@ -1,5 +1,5 @@
 import React from "react";
-import ModelCard from "../modelCard/ModelCard";
+import ModelCard from "../../layouts/modelCard/ModelCard";
 import "./Gallery.css";
 
 export default function Gallery() {
