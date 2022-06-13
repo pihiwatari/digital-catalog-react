@@ -35,10 +35,10 @@
   flex-grow: 1;
 }
 
-.header button {
+.header .header-upload-button {
+  text-align: center;
   min-width: 80px;
-  height: 40px;
-  padding: 8px 12px;
+  padding: 12px;
   border: none;
   border-radius: 6px;
   font-weight: bold;
@@ -46,6 +46,6 @@
   background-color: var(--accent);
 }
 
-.header button:hover {
+.header .header-upload-button:hover {
   background-color: var(--accent-darker);
 }

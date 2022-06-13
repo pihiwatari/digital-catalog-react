@@ -57,9 +57,9 @@ const Header = () => {
       </div>
       <div className="navigation-container">
         <NavMenu onMenuChange={handleClick} openMenu={openMenu} />
-        <button className="header-upload-button">
+        <Link to={"/upload"} className="header-upload-button">
           {width >= 768 ? "Upload a model" : <FaPlus />}
-        </button>
+        </Link>
       </div>
     </header>
   );

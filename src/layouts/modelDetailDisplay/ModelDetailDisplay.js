@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Render3dModel from "../../components/render3dModel/Render3dModel";
+import ModelSpec from "../../components/modelSpec/ModelSpec";
 import "./ModelDetailDisplay.css";
 
 export default function ModelDetailDisplay({ name, date, url }) {
@@ -8,8 +9,9 @@ export default function ModelDetailDisplay({ name, date, url }) {
   // -----Window width state management-----
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
-    // Check for window initial size
+    // -----Window width state management-----
 
+    // Check for window initial size
     if (width >= 768) {
       setShowText(true);
     } else {
@@ -24,17 +26,21 @@ export default function ModelDetailDisplay({ name, date, url }) {
   }, [width]);
   // -----Window width state management-----
 
+  // -----3d model specs state management-----
+  // const [modelSpecs, setModelSpecs ] = useState([])
+  // const getModelSpecs = () => {};
   const modelSpecs = [
     { spec: "x", value: 50, unit: "mm" },
     { spec: "y", value: 30, unit: "mm" },
     { spec: "z", value: 15, unit: "mm" },
     { spec: "volume", value: 5263.0, unit: "mm³" },
   ];
+  // -----3d model specs state management-----
   return (
     <article className="model__display">
-      <figure className="display__render">
+      <div className="display__render">
         <Render3dModel url={url} />
-      </figure>
+      </div>
       <div className="model__data-container">
         <div className="data__title-container">
           <h2>{name || "Unnamed"}</h2>
@@ -43,14 +49,12 @@ export default function ModelDetailDisplay({ name, date, url }) {
         <ul className="data__specs-list">
           {modelSpecs.map((item, key) => {
             return (
-              <li className="specs-list__item" key={key}>
-                <p className="item__key">
-                  {item.spec.charAt(0).toUpperCase() + item.spec.slice(1)}
-                </p>
-                <p className="item__value">
-                  {item.value} {item.unit}
-                </p>
-              </li>
+              <ModelSpec
+                spec={item.spec}
+                value={item.value}
+                unit={item.unit}
+                key={key}
+              />
             );
           })}
         </ul>

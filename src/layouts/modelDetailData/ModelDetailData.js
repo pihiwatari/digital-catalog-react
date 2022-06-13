@@ -7,7 +7,7 @@ export default function ModelDetailData({ price, specs }) {
       <div className="properties__pricing">
         <p>Estimated printing cost</p>
         <h3>$ {price || "TBD"}</h3>
-        <button>Download model</button>
+        <a href="/">Download model</a>
       </div>
       <div className="properties__data-list-container">
         <ul className="data-list">

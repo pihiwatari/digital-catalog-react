@@ -7,7 +7,9 @@ import "./ModelDetails.css";
 
 export default function ModelDetails() {
   const params = useParams();
-  const model = apiData.filter((item) => item.id == params.id)[0];
+  const model = apiData.filter(
+    (item) => parseInt(item.id) === parseInt(params.id)
+  )[0];
   return (
     <main className="model-container">
       <ModelDetailDisplay

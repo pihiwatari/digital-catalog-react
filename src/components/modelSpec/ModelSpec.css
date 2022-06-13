@@ -1,0 +1,22 @@
+.specs-list__item {
+  outline: 1px solid var(--bg-color);
+  padding: 4px;
+}
+
+.item__key {
+  font-size: .9rem;
+  color: var(--secondary-text-color);
+}
+
+.item__value {
+  margin-top: 8px;
+  color: var(--text-color)
+}
+
+@media screen and (min-width: 1024px) {
+
+  .specs-list__item {
+    outline: none;
+    padding: 0;
+  }
+}
