@@ -17,7 +17,12 @@ export default function ModelDetails() {
         date={model.uploadedOn}
         url={model.modelUrl}
       />
-      <ModelDetailData price={model.price} specs={model.specs} />
+      <ModelDetailData
+        name={model.name}
+        url={model.modelUrl}
+        price={model.price}
+        specs={model.specs}
+      />
     </main>
   );
 }

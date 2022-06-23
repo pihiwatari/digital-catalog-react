@@ -4,9 +4,9 @@ import "./SearchBar.css";
 
 const SearchBar = () => {
   return (
-    <form>
+    <form className="search-bar-form">
       <img src={icon} alt="search icon" />
-      <input placeholder="Search 3D models"></input>
+      <input className="search-bar-input" placeholder="Search 3D models" />
     </form>
   );
 };

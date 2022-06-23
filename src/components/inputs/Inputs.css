@@ -1,0 +1,33 @@
+@import "../../globals.css";
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 300px;
+  margin: 8px auto;
+}
+
+.input-container .label {
+  margin-bottom: 12px;
+  font-size: .9rem;
+  color: var(--secondary-text-color);
+}
+
+.input-container .input {
+  width: 100%;
+  padding: 12px 8px;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.input-container .error {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  color: var(--footer-text-color);
+  background-color: var(--error);
+}
