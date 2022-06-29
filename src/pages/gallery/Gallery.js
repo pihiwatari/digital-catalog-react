@@ -1,6 +1,6 @@
 import React from "react";
 import ModelCard from "../../layouts/modelCard/ModelCard";
-import apiData from "../../utils/mockupData";
+import apiData from "../../db/db";
 import "./Gallery.css";
 
 export default function Gallery() {
