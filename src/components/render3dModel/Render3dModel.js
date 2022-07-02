@@ -9,6 +9,8 @@ import {
   Bounds,
   OrthographicCamera,
   Stage,
+  Environment,
+  Center,
 } from "@react-three/drei";
 
 function Model(props) {
@@ -19,16 +21,16 @@ function Model(props) {
   const ref = useRef();
 
   // Suscribe to render-loop, rotating mesh every frame
-  useFrame((state, delta) => (ref.current.rotation.z += 0.005));
+  // useFrame((state, delta) => (ref.current.rotation.z += 0.005));
 
   const { camera } = useThree();
   camera.lookAt([0, 0, 0]);
 
   return (
-    <Bounds fit clip>
+    <Bounds fit observe>
       <mesh {...props} ref={ref}>
         <primitive object={stl} attach="geometry" />
-        <meshStandardMaterial color="orange" />
+        <meshStandardMaterial color="black" roughness={1} />
       </mesh>
     </Bounds>
   );
@@ -37,23 +39,12 @@ function Model(props) {
 export default function Render3dModel({ photo, url }) {
   return (
     <Canvas camera={{ position: [-150, 50, 100] }}>
-      <Stage
-        contactShadow
-        shadows
-        adjustCamera
-        intensity={0.65}
-        environment="city"
-        preset="rembrandt"
-      >
-        <Suspense fallback={null}>
-          <Model position={[0, 0, 0]} rotation={[-1.5708, 0, 0]} />
-        </Suspense>
-        <OrthographicCamera />
-        <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
-          <GizmoViewcube />
-        </GizmoHelper>
-      </Stage>
-      <OrbitControls makeDefault />
+      <Suspense fallback={null}>
+        <Stage position={[0, 0, 0]} environment="studio" intensity={0.5}>
+          <Model position={[0, 0, 50]} />
+        </Stage>
+      </Suspense>
+      <OrbitControls autoRotate makeDefault />
     </Canvas>
   );
 }

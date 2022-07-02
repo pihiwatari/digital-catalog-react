@@ -1,30 +1,11 @@
 import React, { useState, useEffect } from "react";
+import useWindowWidth from "../../hooks/useWindowWidth";
 import Render3dModel from "../../components/render3dModel/Render3dModel";
 import ModelSpec from "../../components/modelSpec/ModelSpec";
 import "./ModelDetailDisplay.css";
 
 export default function ModelDetailDisplay({ name, date, url }) {
-  const [showText, setShowText] = useState(false);
-
-  // -----Window width state management-----
-  const [width, setWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    // -----Window width state management-----
-
-    // Check for window initial size
-    if (width >= 768) {
-      setShowText(true);
-    } else {
-      setShowText(false);
-    }
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [width]);
-  // -----Window width state management-----
+  const showText = useWindowWidth();
 
   // -----3d model specs state management-----
   // const [modelSpecs, setModelSpecs ] = useState([])
@@ -43,8 +24,8 @@ export default function ModelDetailDisplay({ name, date, url }) {
       </div>
       <div className="model__data-container">
         <div className="data__title-container">
-          <h2>{name || "Unnamed"}</h2>
-          {showText ? <span>| {date}</span> : ""}
+          <h2>{name || "No name"}</h2>
+          {showText && <span>| {date}</span>}
         </div>
         <ul className="data__specs-list">
           {modelSpecs.map((item, key) => {
