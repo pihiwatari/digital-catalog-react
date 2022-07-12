@@ -1,46 +1,46 @@
 import React from "react";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
-import SelectInput from "../../components/inputs/SelectInput";
+// import * as Yup from "yup";
+// import SelectInput from "../../components/inputs/SelectInput";
 import TextInput from "../../components/inputs/TextInput";
 import "./UploadForm.css";
 
-const formSchema = Yup.object().shape({
-  modelName: Yup.string()
-    .max(50, "Model name length muest be 50 characters or less")
-    .required("Required"),
-  category: Yup.string()
-    .oneOf(["Spare parts", "End-use parts", "Jigs & fixtures"])
-    .required(),
-  brand: Yup.string().required("Required"),
-  machineModel: Yup.string().required("Required"),
-  printingTechnology: Yup.string().oneOf([
-    "Multi Jet Fusion",
-    "FDM",
-    "PolyJet",
-  ]),
-  printerModel: Yup.string().oneOf([
-    "HP 4200 3D",
-    "Ultimaker S5",
-    "Objet J750",
-  ]),
-  material: Yup.string().required(),
-  layerHeight: Yup.number(),
-  infill: Yup.number(),
-  file: Yup.mixed().required(),
-});
+// const formSchema = Yup.object().shape({
+//   modelName: Yup.string()
+//     .max(50, "Model name length muest be 50 characters or less")
+//     .required("Required"),
+//   category: Yup.string()
+//     .oneOf(["Spare parts", "End-use parts", "Jigs & fixtures"])
+//     .required(),
+//   brand: Yup.string().required("Required"),
+//   machineModel: Yup.string().required("Required"),
+//   printingTechnology: Yup.string().oneOf([
+//     "Multi Jet Fusion",
+//     "FDM",
+//     "PolyJet",
+//   ]),
+//   printerModel: Yup.string().oneOf([
+//     "HP 3D 4200",
+//     "Ultimaker S5",
+//     "Objet J750",
+//   ]),
+//   material: Yup.string().required(),
+//   layerHeight: Yup.number(),
+//   infill: Yup.number(),
+//   file: Yup.mixed().required(),
+// });
 
 export default function uploadForm() {
   let initialValues = {
     modelName: "",
-    category: "",
-    brand: "",
-    machineModel: "",
-    printingTechnology: "",
-    printerModel: "",
-    material: "",
-    layerHeight: 0.08,
-    infill: 0,
+    // category: "",
+    // brand: "",
+    // machineModel: "",
+    // printingTechnology: "",
+    // printerModel: "",
+    // material: "",
+    // layerHeight: 0.08,
+    // infill: 0,
     file: null,
   };
 
@@ -49,7 +49,7 @@ export default function uploadForm() {
       <h1 className="form-title">3D model upload</h1>
       <Formik
         initialValues={initialValues}
-        validationSchema={formSchema}
+        // validationSchema={formSchema}
         onSubmit={(values, actions) => {
           console.log("submitting...");
           setTimeout(() => {
@@ -69,10 +69,24 @@ export default function uploadForm() {
               )
             );
             actions.setSubmitting(false);
+            actions.resetForm();
           }, 1000);
         }}
       >
         {({ setFieldValue }) => {
+          const _onFileChange = (e) => {
+            /**
+             * Read user's uploaded file, and fill the upload form fields with the
+             * file's data.
+             * @param {event} e onChange event object
+             */
+            let file = e.target.files[0];
+            if (file) {
+              setFieldValue("file", file);
+              setFieldValue("modelName", file.name);
+            }
+          };
+
           return (
             <Form className="form">
               <div className="form-grid">
@@ -82,10 +96,8 @@ export default function uploadForm() {
                   name="file"
                   type="file"
                   label="Upload file"
-                  onChange={(event) => {
-                    setFieldValue("file", event.currentTarget.files[0]);
-                    console.log(event.currentTarget.files[0]);
-                  }}
+                  accept=".stl, .3mf"
+                  onChange={(event) => _onFileChange(event)}
                 />
                 <TextInput
                   label="Model Name"
@@ -93,7 +105,7 @@ export default function uploadForm() {
                   placeholder="Model Name"
                   type="text"
                 />
-                <SelectInput label="Category" name="category">
+                {/* <SelectInput label="Category" name="category">
                   <option>Select one...</option>
                   <option>Spare parts</option>
                   <option>End-use parts</option>
@@ -122,7 +134,7 @@ export default function uploadForm() {
                 </SelectInput>
                 <SelectInput label="3D printer" name="printerModel">
                   <option>Select one...</option>
-                  <option>Multi Jet Fusion</option>
+                  <option>HP 3D 4200</option>
                   <option>Ultimaker S5</option>
                   <option>Objet J750</option>
                 </SelectInput>
@@ -144,7 +156,7 @@ export default function uploadForm() {
                   placeholder="E.g. 100%"
                   type="number"
                   step=".01"
-                />
+                /> */}
               </div>
               <button className="form-submit" type="submit">
                 Upload Model

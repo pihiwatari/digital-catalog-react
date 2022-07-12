@@ -5,7 +5,7 @@ import UploadForm from "./pages/uploadForm/UploadForm";
 import Footer from "./layouts/footer/Footer";
 import ModelDetails from "./pages/modelDetails/ModelDetails";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
+import "./index.css";
 import NotFound from "./components/notFound/NotFound";
 
 function App() {

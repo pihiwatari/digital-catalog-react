@@ -44,3 +44,9 @@ li {
 button:hover {
   cursor: pointer;
 }
+
+.App {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+}
