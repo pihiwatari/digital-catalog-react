@@ -5,7 +5,7 @@ import "./ModelCard.css";
 
 const ModelCard = ({ id, modelImage, avatar, name, price }) => {
   return (
-    <Link to={"models/" + id}>
+    <Link to={"3DModels/" + id}>
       <article className="card">
         <figure className="image-container">
           <img className="model-image" src={modelImage} alt={name} />

@@ -1,19 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ModelDetailData.css";
 
 export default function ModelDetailData({ name, url, price, specs }) {
-  const handleClick = () => {
-    alert(url);
-  };
-
   return (
     <aside className="model__properties-container">
       <div className="properties__pricing">
         <p>Estimated printing cost</p>
-        <h3>$ {price || "TBD"}</h3>
-        <a download={name} href={url} target="_blank" onClick={handleClick}>
-          Download model
-        </a>
+        <h3>$ {price || 0}</h3>
+        <Link
+          className="download-button"
+          to={url}
+          target="_blank"
+          download={name + ".stl"}
+        >
+          {"Download " + name}
+        </Link>
       </div>
       <div className="properties__data-list-container">
         <ul className="data-list">

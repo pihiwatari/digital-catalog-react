@@ -1,21 +1,25 @@
 import React, { Suspense, useRef } from "react";
-import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
+import { Canvas, useLoader, useThree } from "@react-three/fiber";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 import fallbackSTL from "./sample3DModel/sus_part_2.stl";
 import {
-  GizmoHelper,
-  GizmoViewcube,
+  // GizmoHelper,
+  // GizmoViewcube,
   OrbitControls,
   Bounds,
-  OrthographicCamera,
+  // OrthographicCamera,
   Stage,
-  Environment,
-  Center,
+  // Environment,
+  // Center,
 } from "@react-three/drei";
 
 function Model(props) {
+  /**
+   * Model fetching and rendering function
+   */
+
   // Select loader
-  const stl = useLoader(STLLoader, props.url || fallbackSTL);
+  const stl = useLoader(STLLoader, fallbackSTL);
 
   // create ref for mesh
   const ref = useRef();
@@ -23,6 +27,7 @@ function Model(props) {
   // Suscribe to render-loop, rotating mesh every frame
   // useFrame((state, delta) => (ref.current.rotation.z += 0.005));
 
+  // Create camera and define its position
   const { camera } = useThree();
   camera.lookAt([0, 0, 0]);
 
@@ -41,7 +46,7 @@ export default function Render3dModel({ photo, url }) {
     <Canvas camera={{ position: [-150, 50, 100] }}>
       <Suspense fallback={null}>
         <Stage position={[0, 0, 0]} environment="studio" intensity={0.5}>
-          <Model position={[0, 0, 50]} />
+          <Model url={url} position={[0, 0, 50]} />
         </Stage>
       </Suspense>
       <OrbitControls autoRotate makeDefault />

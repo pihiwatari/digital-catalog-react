@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import useWindowWidth from "../../hooks/useWindowWidth";
 import Render3dModel from "../../components/render3dModel/Render3dModel";
 import ModelSpec from "../../components/modelSpec/ModelSpec";
@@ -6,6 +6,8 @@ import "./ModelDetailDisplay.css";
 
 export default function ModelDetailDisplay({ name, date, url }) {
   const showText = useWindowWidth();
+
+  const uploadDate = new Date(date).toUTCString("MM-DD-YY");
 
   // -----3d model specs state management-----
   // const [modelSpecs, setModelSpecs ] = useState([])
@@ -25,7 +27,7 @@ export default function ModelDetailDisplay({ name, date, url }) {
       <div className="model__data-container">
         <div className="data__title-container">
           <h2>{name || "No name"}</h2>
-          {showText && <span>| {date}</span>}
+          {showText && <span>| {uploadDate}</span>}
         </div>
         <ul className="data__specs-list">
           {modelSpecs.map((item, key) => {

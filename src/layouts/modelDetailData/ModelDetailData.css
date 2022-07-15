@@ -21,7 +21,7 @@
   color: var(--accent)
 }
 
-.properties__pricing a {
+.properties__pricing .download-button {
   display: block;
   width: 100%;
   max-width: 480px;
@@ -36,7 +36,7 @@
   background-color: var(--link-color);
 }
 
-.properties__pricing a:hover {
+.properties__pricing .download-button:hover {
   background-color: var(--link-color-darker)
 }
 
