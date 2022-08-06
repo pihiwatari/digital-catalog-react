@@ -52,22 +52,28 @@ export default function uploadForm() {
         // validationSchema={formSchema}
         onSubmit={(values, actions) => {
           console.log("submitting...");
+
+          // POST function
           setTimeout(() => {
-            // actions.setValues({ file: "" });
-            alert(
-              JSON.stringify(
-                {
-                  ...values,
-                  file: {
-                    name: values.file.name,
-                    size: values.file.size,
-                    type: values.file.type,
-                  },
-                },
-                null,
-                2
-              )
-            );
+            const valuesArray = Object.entries(values);
+
+            const formData = new FormData();
+            valuesArray.forEach(([key, value]) => {
+              formData.append(key, value);
+            });
+
+            //POST REQUEST
+            fetch("http://localhost:3003/3DModels/", {
+              method: "POST",
+              body: formData,
+            })
+              .then((res) => {
+                console.log(res);
+                // return res.json();
+              })
+              // .then((data) => console.log(data))
+              .catch((err) => console.log(err));
+
             actions.setSubmitting(false);
             actions.resetForm();
           }, 1000);

@@ -19,11 +19,7 @@ export default function ModelDetails() {
       {isLoading && <h1>Loading...</h1>}
       {model && !isLoading && (
         <main className="model-container">
-          <ModelDetailDisplay
-            name={model.name}
-            date={model.uploadedOn}
-            url={model.modelURL}
-          />
+          <ModelDetailDisplay model={model} />
           <ModelDetailData
             name={model.name}
             url={model.modelURL}

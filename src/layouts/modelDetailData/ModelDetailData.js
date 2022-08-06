@@ -10,7 +10,7 @@ export default function ModelDetailData({ name, url, price, specs }) {
         <h3>$ {price || 0}</h3>
         <Link
           className="download-button"
-          to={url}
+          to={"/files/" + url}
           target="_blank"
           download={name + ".stl"}
         >
@@ -19,12 +19,13 @@ export default function ModelDetailData({ name, url, price, specs }) {
       </div>
       <div className="properties__data-list-container">
         <ul className="data-list">
-          {specs.map((item, key) => (
-            <li className="data-list__item" key={key}>
-              <h4>{item.title}</h4>
-              <p>{item.value}</p>
-            </li>
-          ))}
+          {specs &&
+            specs.map((item, key) => (
+              <li className="data-list__item" key={key}>
+                <h4>{item.title}</h4>
+                <p>{item.value}</p>
+              </li>
+            ))}
         </ul>
       </div>
     </aside>
