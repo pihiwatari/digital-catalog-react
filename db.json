@@ -5,74 +5,48 @@
       "name": "Test model 1",
       "price": 15.25,
       "uploadedOn": "2018-03-19T22:25:36Z",
-      "modelSpecs": [
-        {
-          "title": "Category",
-          "value": "Spare parts"
-        },
-        {
-          "title": "Brand and machine model",
-          "value": "Flex - Raspberry Pie"
-        },
-        {
-          "title": "Material",
-          "value": "HP 3D PA12"
-        },
-        {
-          "title": "3D printer",
-          "value": "HP 3D 4200"
-        },
-        {
-          "title": "3D printing technology",
-          "value": "Multi Jet Fusion"
-        },
-        {
-          "title": "Layer height",
-          "value": 0.08
-        },
-        {
-          "title": "Model infill",
-          "value": 100
-        }
-      ],
-      "modelURL": "model1.stl"
+      "category": "Spare parts",
+      "brand": "Flex",
+      "machineModel": "Raspberry pie",
+      "material": "HP 3D PA12",
+      "printer": "HP 3D 4200",
+      "technology": "Multi Jet Fusion",
+      "layerHeight": 0.08,
+      "modelInfill": 100,
+      "modelURL": "model.stl"
     },
     {
       "id": 2,
       "name": "Test model 2",
-      "price": 44.55,
-      "uploadedOn": "2020-02-15T01:55:46Z",
-      "modelSpecs": [
-        {
-          "title": "Category",
-          "value": "End-use parts"
-        },
-        {
-          "title": "Brand and machine model",
-          "value": "Nano machines"
-        },
-        {
-          "title": "Material",
-          "value": "PLA"
-        },
-        {
-          "title": "3D printer",
-          "value": "Fortus 400mc"
-        },
-        {
-          "title": "3D printing technology",
-          "value": "FDM - Fused Deposition Modeling"
-        },
-        {
-          "title": "Layer height",
-          "value": 0.2
-        },
-        {
-          "title": "Model infill",
-          "value": 25
-        }
-      ],
+      "price": 15.25,
+      "uploadedOn": "2018-03-19T22:25:36Z",
+      "category": "Spare parts",
+      "brand": "Flex",
+      "machineModel": "Raspberry pie",
+      "material": "HP 3D PA12",
+      "printer": "HP 3D 4200",
+      "technology": "Multi Jet Fusion",
+      "layerHeight": 0.08,
+      "modelInfill": 100,
       "modelURL": "model2.stl"
+    },
+    {
+      "name": "potato.stl",
+      "price": "15.27",
+      "category": "Jigs & fixtures",
+      "brand": "N/A",
+      "machineModel": "N/A",
+      "technology": "",
+      "printer": "",
+      "material": "Nylon12",
+      "layerHeight": "0.08",
+      "modelInfill": "100",
+      "printingTechnology": "Multi Jet Fusion",
+      "printerModel": "HP 3D 4200",
+      "infill": "100",
+      "uploadedOn": "2022-08-18T01:54:22.578Z",
+      "modelURL": "1660787662565-951282693.stl",
+      "id": 3
     }
   ]
 }

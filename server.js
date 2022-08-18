@@ -22,8 +22,13 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 server.post("/3DModels/", upload.single("file"), (req, res, next) => {
   try {
+    // Create and modify req.body atributtes
+
+    // Add uploading date
     req.body.uploadedOn = new Date();
-    req.body.modelURL = req.file.path;
+
+    // Modify path to contain only filename, and extension
+    req.body.modelURL = req.file.filename;
   } catch (error) {
     res.json({ "Error:": error });
   }

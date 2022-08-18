@@ -1,46 +1,22 @@
 import React from "react";
 import { Formik, Form } from "formik";
-// import * as Yup from "yup";
-// import SelectInput from "../../components/inputs/SelectInput";
+import SelectInput from "../../components/inputs/SelectInput";
 import TextInput from "../../components/inputs/TextInput";
+import { schemaOptions, formSchema } from "../../utils/formSchema";
 import "./UploadForm.css";
-
-// const formSchema = Yup.object().shape({
-//   modelName: Yup.string()
-//     .max(50, "Model name length muest be 50 characters or less")
-//     .required("Required"),
-//   category: Yup.string()
-//     .oneOf(["Spare parts", "End-use parts", "Jigs & fixtures"])
-//     .required(),
-//   brand: Yup.string().required("Required"),
-//   machineModel: Yup.string().required("Required"),
-//   printingTechnology: Yup.string().oneOf([
-//     "Multi Jet Fusion",
-//     "FDM",
-//     "PolyJet",
-//   ]),
-//   printerModel: Yup.string().oneOf([
-//     "HP 3D 4200",
-//     "Ultimaker S5",
-//     "Objet J750",
-//   ]),
-//   material: Yup.string().required(),
-//   layerHeight: Yup.number(),
-//   infill: Yup.number(),
-//   file: Yup.mixed().required(),
-// });
 
 export default function uploadForm() {
   let initialValues = {
-    modelName: "",
-    // category: "",
-    // brand: "",
-    // machineModel: "",
-    // printingTechnology: "",
-    // printerModel: "",
-    // material: "",
-    // layerHeight: 0.08,
-    // infill: 0,
+    name: "",
+    price: 10.0,
+    category: "",
+    brand: "",
+    machineModel: "",
+    technology: "",
+    printer: "",
+    material: "",
+    layerHeight: 0.08,
+    modelInfill: 100,
     file: null,
   };
 
@@ -49,7 +25,7 @@ export default function uploadForm() {
       <h1 className="form-title">3D model upload</h1>
       <Formik
         initialValues={initialValues}
-        // validationSchema={formSchema}
+        validationSchema={formSchema}
         onSubmit={(values, actions) => {
           console.log("submitting...");
 
@@ -89,7 +65,7 @@ export default function uploadForm() {
             let file = e.target.files[0];
             if (file) {
               setFieldValue("file", file);
-              setFieldValue("modelName", file.name);
+              setFieldValue("name", file.name);
             }
           };
 
@@ -107,15 +83,21 @@ export default function uploadForm() {
                 />
                 <TextInput
                   label="Model Name"
-                  name="modelName"
+                  name="name"
                   placeholder="Model Name"
                   type="text"
                 />
-                {/* <SelectInput label="Category" name="category">
+                <TextInput
+                  label="3D printing cost"
+                  name="price"
+                  placeholder="$9.99"
+                  type="number"
+                />
+                <SelectInput label="Category" name="category">
                   <option>Select one...</option>
-                  <option>Spare parts</option>
-                  <option>End-use parts</option>
-                  <option>Jigs & fixtures</option>
+                  {schemaOptions.categories.map((category) => {
+                    return <option>{category}</option>;
+                  })}
                 </SelectInput>
                 <TextInput
                   label="Machine Brand"
@@ -134,15 +116,15 @@ export default function uploadForm() {
                   name="printingTechnology"
                 >
                   <option>Select one...</option>
-                  <option>Multi Jet Fusion</option>
-                  <option>FDM</option>
-                  <option>Poly Jet</option>
+                  {schemaOptions.technologies.map((technology) => {
+                    return <option>{technology}</option>;
+                  })}
                 </SelectInput>
                 <SelectInput label="3D printer" name="printerModel">
                   <option>Select one...</option>
-                  <option>HP 3D 4200</option>
-                  <option>Ultimaker S5</option>
-                  <option>Objet J750</option>
+                  {schemaOptions.printers.map((printer) => {
+                    return <option>{printer}</option>;
+                  })}
                 </SelectInput>
                 <TextInput
                   label="Material"
@@ -162,7 +144,7 @@ export default function uploadForm() {
                   placeholder="E.g. 100%"
                   type="number"
                   step=".01"
-                /> */}
+                />
               </div>
               <button className="form-submit" type="submit">
                 Upload Model
