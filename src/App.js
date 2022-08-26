@@ -13,6 +13,7 @@ function App() {
     const fetchData = async (url) => {
       const data = await fetch(url);
       const models = await data.json();
+      console.log(models);
       setModelData(models);
     };
 
