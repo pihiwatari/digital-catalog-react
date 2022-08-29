@@ -31,6 +31,7 @@ function Render3DModel({ url }) {
       <ErrorBoundary>
         <Canvas
           camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 10, 20] }}
+          className="bg-gray-300"
         >
           <Model url={url} />
           <Environment preset="sunset" />

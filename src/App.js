@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { GalleryPage } from "./pages/GalleryPage";
+import { Header } from "./layouts/Header";
 import "./index.css";
 
 function App() {
@@ -13,7 +14,6 @@ function App() {
     const fetchData = async (url) => {
       const data = await fetch(url);
       const models = await data.json();
-      console.log(models);
       setModelData(models);
     };
 
@@ -22,7 +22,8 @@ function App() {
   }, []);
 
   return (
-    <div id="app" className="w-screen h-screen">
+    <div id="app" className="flex flex-col w-screen h-screen bg-gray-100">
+      <Header />
       <Routes>
         <Route path="/" element={<GalleryPage models={modelData} />} />
       </Routes>

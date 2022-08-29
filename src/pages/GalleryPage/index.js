@@ -6,7 +6,7 @@ function GalleryPage({ models }) {
   const baseURL = "http://localhost:3003/files/";
 
   return (
-    <main className="">
+    <main className="flex-grow grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
       {models?.map((model) => {
         const url = baseURL + model.modelURL;
 
