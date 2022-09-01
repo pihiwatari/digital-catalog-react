@@ -1,11 +1,22 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 
-function SearchModel() {
+function SearchModel({ searchValue, setSearchValue }) {
+  const handleInputChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
   return (
     <div className="flex gap-4 items-center h-12 m-4 p-2 rounded-sm bg-gray-300">
-      <FaSearch className="w-6 h-6 text-primary" />
-      <input placeholder="Search 3D models" className="bg-transparent" />
+      <button onClick={(e) => handleInputChange(e)}>
+        <FaSearch className="w-6 h-6 text-primary" />
+      </button>
+      <input
+        placeholder="Search 3D models"
+        className="bg-transparent"
+        onChange={(e) => handleInputChange(e)}
+        value={searchValue}
+      />
     </div>
   );
 }

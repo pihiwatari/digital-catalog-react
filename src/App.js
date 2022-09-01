@@ -37,10 +37,20 @@ function App() {
     };
   }, [windowWidth]);
 
+  // Search and filter models by name or user
+  // State for getting the search value and filtering models
+  const [searchValue, setSearchValue] = useState("");
+
+  let filteredModels = [];
+
+  if (!searchValue.length >= 1) {
+  }
+
   return (
-    <div id="app" className="flex flex-col w-screen h-screen bg-gray-100">
+    <div id="app" className="flex flex-col w-screen bg-gray-100">
       <Header screenWidth={windowWidth} />
-      <SearchModel />
+      <SearchModel searchValue={searchValue} setSearchValue={setSearchValue} />
+      <p>{searchValue}</p>
       <Routes>
         <Route path="/" element={<GalleryPage models={modelData} />} />
       </Routes>

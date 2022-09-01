@@ -18,7 +18,11 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       // Puedes renderizar cualquier interfaz de repuesto
-      return <h1>Something went wrong.</h1>;
+      return (
+        <div className="flex w-full h-full items-center text-center">
+          <h2 className="w-full font-bold">Something went wrong.</h2>
+        </div>
+      );
     }
 
     return this.props.children;
