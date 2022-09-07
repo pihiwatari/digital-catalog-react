@@ -39,20 +39,21 @@ function App() {
 
   // Search and filter models by name or user
   // State for getting the search value and filtering models
+  // NOTE: convert this to a custom hook later
   const [searchValue, setSearchValue] = useState("");
 
-  let filteredModels = [];
+  const modelsToFilter = modelData?.filter((item) =>
+    item.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
+  );
 
-  if (!searchValue.length >= 1) {
-  }
+  const filteredModels = searchValue ? modelsToFilter : modelData;
 
   return (
     <div id="app" className="flex flex-col w-screen bg-gray-100">
       <Header screenWidth={windowWidth} />
       <SearchModel searchValue={searchValue} setSearchValue={setSearchValue} />
-      <p>{searchValue}</p>
       <Routes>
-        <Route path="/" element={<GalleryPage models={modelData} />} />
+        <Route path="/" element={<GalleryPage models={filteredModels} />} />
       </Routes>
     </div>
   );
