@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { GalleryPage } from "./pages/GalleryPage";
+import { ModelDetailsPage } from "./pages/ModelDetailsPage";
 import { Header } from "./layouts/Header";
 import "./index.css";
 import { SearchModel } from "./components/SearchModel";
@@ -54,6 +55,10 @@ function App() {
       <SearchModel searchValue={searchValue} setSearchValue={setSearchValue} />
       <Routes>
         <Route path="/" element={<GalleryPage models={filteredModels} />} />
+        <Route
+          path="/3d-models/:id"
+          element={<ModelDetailsPage models={filteredModels} />}
+        />
       </Routes>
     </div>
   );
